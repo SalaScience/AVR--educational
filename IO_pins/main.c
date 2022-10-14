@@ -1,4 +1,5 @@
 // *****************************
+// (c)2022 SalaScience
 // Controling all pins of PORTA
 // *****************************
 #include <avr/io.h>     // library providing all i/o definitions for various AVRs
@@ -35,15 +36,3 @@ int main (void)
     }
  return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-*/
