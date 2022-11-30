@@ -8,7 +8,7 @@
 #define UPORT PORTC
 #define UDDR DDRC
 #define UP PC7
-// ============ PULSE DURATION IN MICROSECONDS========
+// ============ PULSE DURATION IN MICROSECONDS =======
 #define RESET_TIME 300
 #define LONG_STATE 0.8
 #define SHORT_STATE 0.4
@@ -17,7 +17,7 @@
 // Reset pulse
 static inline void WS2812B_reset(void)
 {
- UPORT &=~(1 << UP);
+ UPORT &= ~(1 << UP);
  _delay_us(RESET_TIME);
 }
 
@@ -29,14 +29,14 @@ void WS2812B_send_bit(uint8_t bit_value)
   // Sending 1
   UPORT |= (1 << UP);
   _delay_us(LONG_STATE);
-  UPORT &=~(1 << UP);
+  UPORT &= ~(1 << UP);
   _delay_us(SHORT_STATE);
  } else
  {
   // Sending 0 
   UPORT |= (1 << UP);
   _delay_us(SHORT_STATE);
-  UPORT &=~(1 << UP);
+  UPORT &= ~(1 << UP);
   _delay_us(LONG_STATE);
  }
 }
@@ -44,7 +44,7 @@ void WS2812B_send_bit(uint8_t bit_value)
 // Sending a whole byte (8 bits) statring from MSB
 void WS2812B_send_byte(uint8_t byte_value)
 {
- for (int8_t i= 7 ; i >=0 ; i--)
+ for (int8_t i = 7 ; i >= 0 ; i--)
  {
   if (byte_value & (1 << i)) WS2812B_send_bit(1);
    else WS2812B_send_bit(0); 
