@@ -56,7 +56,6 @@ int main (void)
   // Setting high state on the data pin
   UDDR |= (1 << UP);
   UPORT |= (1 << UP);
-  WS2812B_reset();
   //Colors coded as GG RR BB (Green, Red, Blue)
   // 16 colors as there are 16 LEDs
   uint32_t colors[16] = 
