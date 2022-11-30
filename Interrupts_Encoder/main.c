@@ -23,10 +23,10 @@ ISR(INT1_vect)
 
 int main (void)
 {
-	sei(); 					// sets I-bit in SREG, globally enables interrupts
-	MCUCR |= (1 << ISC11); 	// falling edge
-	GICR |= (1 << INT1); 	// enable INT1
-	DDRA |= 0xFF; 			// output direction for LEDs
+	sei();					// sets I-bit in SREG, globally enables interrupts
+	MCUCR |= (1 << ISC11);	// falling edge
+	GICR |= (1 << INT1);	// enable INT1
+	DDRA |= 0xFF;			// output direction for LEDs
 
 	// **********************************************************
 	// OPTIONAL IF THERE ARE NO PULL-UP RESISTORS ON PD3 AND PB0
